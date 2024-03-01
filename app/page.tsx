@@ -35,6 +35,7 @@ export default function Home() {
 
     const onDragEnd: OnDragEndResponder = (value) => {
         console.log(value)
+        if (value?.destination?.droppableId !== 'left') return
         setCompletedProblem(problems[value.source.index])
     }
 
@@ -57,7 +58,7 @@ export default function Home() {
                             <input
                                 type="text"
                                 placeholder="Filter"
-                                className="w-full p-2 shadow-md focus:shadow-outline border rounded-lg px-4"
+                                className="w-full p-2 shadow-sm focus:shadow-outline border rounded-lg px-4"
                             />
                             <CompletionsList name="left" completions={completions} />
                         </div>
@@ -65,7 +66,7 @@ export default function Home() {
                             <input
                                 type="text"
                                 placeholder="Filter"
-                                className="w-full p-2 shadow-md focus:shadow-outline border rounded-lg px-4"
+                                className="w-full p-2 shadow-sm focus:shadow-outline border rounded-lg px-4"
                             />
                             <ProblemsList name="right" problems={problems} />
                         </div>
