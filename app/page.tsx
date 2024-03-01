@@ -14,10 +14,10 @@ export default function Home() {
     const [ingredients, setIngredients] = useState<Problem[]>([])
 
     useEffect(() => {
-        fetch('/api/ingredients')
+        fetch('/api/problems')
             .then((res) => res.json())
             .then((data) => {
-                setIngredients(data?.meals?.slice(0, 11) || [])
+                setIngredients(data?.slice(0, 11) || [])
             })
     }, [])
 
@@ -31,10 +31,10 @@ export default function Home() {
                 <div className="flex h-2/3">
                     <DragDropContext onDragEnd={onDragEnd}>
                         <div className="flex-grow p-5 w-1/2">
-                            <ProblemsList name="left" ingredients={ingredients} />
+                            <ProblemsList name="left" problems={ingredients} />
                         </div>
                         <div className="flex-grow p-5 w-1/2">
-                            <ProblemsList name="right" ingredients={ingredients} />
+                            <ProblemsList name="right" problems={ingredients} />
                         </div>
                     </DragDropContext>
                 </div>

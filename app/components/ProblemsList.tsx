@@ -11,12 +11,12 @@ import DraggableIngredientList from './DraggableList'
 import { Problem } from '../types/Problem'
 import { useEffect, useState } from 'react'
 
-interface IngredientsListProps {
+interface ProblemsListProps {
     name: string
-    ingredients: Problem[]
+    problems: Problem[]
 }
 
-export default function ProblemsList({ name, ingredients }: IngredientsListProps) {
+export default function ProblemsList({ name, problems }: ProblemsListProps) {
     return (
         <div className="h-full w-full bg-white shadow-lg rounded-lg p-6">
             <Droppable droppableId={name}>
@@ -26,12 +26,12 @@ export default function ProblemsList({ name, ingredients }: IngredientsListProps
                         className="flex flex-col h-full items-center overflow-y-auto "
                         {...provided.droppableProps}>
                         <div className="w-full ">
-                            {ingredients?.map((ingredient, index) => (
+                            {problems?.map((problem, index) => (
                                 <DraggableIngredient
-                                    ingredient={ingredient}
+                                    ingredient={problem}
                                     index={index}
                                     key={index}
-                                    draggableId={name + '-' + ingredient.idIngredient}
+                                    draggableId={name + '-' + problem.uid}
                                 />
                             ))}
                         </div>

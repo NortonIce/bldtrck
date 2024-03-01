@@ -1,6 +1,8 @@
 export type Problem = {
-    idIngredient: string
-    strDescription: string
-    strIngredient: string
-    strType: string
+    uid: string
+    vLevel: number
+    type: string
+    image: string
+    description: string
+    gym: string
 }

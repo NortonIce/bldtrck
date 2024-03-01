@@ -12,14 +12,14 @@ import { Problem } from '../types/Problem'
 interface DraggableIngredientProps {
     droppebleId: string
     draggableId: string
-    ingredients: Problem[]
+    problems: Problem[]
     index: number
 }
 
 export default function DraggableIngredientList({
     droppebleId,
     draggableId,
-    ingredients,
+    problems,
     index
 }: DraggableIngredientProps) {
     return (
@@ -37,11 +37,11 @@ export default function DraggableIngredientList({
                                     ref={provided.innerRef}
                                     className="flex flex-col h-full"
                                     {...provided.droppableProps}>
-                                    {ingredients.map((ingredient, index) => (
+                                    {problems.map((ingredient, index) => (
                                         <DraggableIngredient
                                             ingredient={ingredient}
                                             index={index}
-                                            key={ingredient.idIngredient}
+                                            key={ingredient.uid}
                                             draggableId={droppebleId + '-' + ingredient}
                                         />
                                     ))}
