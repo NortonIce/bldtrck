@@ -18,7 +18,7 @@ export default function DraggableProblem({ problem, draggableId, index }: Dragga
                     {...provided.dragHandleProps}>
                     <div>
                         <div className="flex flex-col items-center bg-orange-200 m-4 p-4 rounded-lg shadow-lg">
-                            {problem.id}
+                            {problem.gym} - {problem.type}
                         </div>
                     </div>
                 </div>
