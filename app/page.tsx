@@ -55,6 +55,7 @@ export default function Home() {
                 <div className="flex h-3/4">
                     <DragDropContext onDragEnd={onDragEnd}>
                         <div className="flex-grow p-5 w-1/2">
+                            <div className="py-2 px-4 text-lg font-bold">Completed boulders</div>
                             <input
                                 type="text"
                                 placeholder="Filter"
@@ -63,6 +64,7 @@ export default function Home() {
                             <CompletionsList name="left" completions={completions} />
                         </div>
                         <div className="flex-grow p-5 w-1/2">
+                            <div className="py-2 px-4 text-lg font-bold">Tracked problems</div>
                             <input
                                 type="text"
                                 placeholder="Filter"
