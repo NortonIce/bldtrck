@@ -7,37 +7,34 @@ import {
     DraggableProvided
 } from '@hello-pangea/dnd'
 import DraggableIngredient from './DraggableIngredient'
+import DraggableIngredientList from './DraggableIngredientsList'
+import { Ingredient } from '../types/Ingredient'
+import { useEffect, useState } from 'react'
 
 interface IngredientsListProps {
     name: string
+    ingredients: Ingredient[]
 }
 
-export default function IngredientsList({ name }: IngredientsListProps) {
-    const ingredients = [
-        'apple',
-        'banana',
-        'carrot',
-        'dill',
-        'eggplant',
-        'fennel',
-        'grape',
-        'honey'
-    ]
-
+export default function IngredientsList({ name, ingredients }: IngredientsListProps) {
     return (
-        <div>
+        <div className="h-full w-full bg-white shadow-lg rounded-lg p-6">
             <Droppable droppableId={name}>
                 {(provided: DroppableProvided) => (
-                    <div ref={provided.innerRef} {...provided.droppableProps}>
-                        {ingredients.map((ingredient, index) => (
-                            <DraggableIngredient
-                                ingredient={ingredient}
-                                index={index}
-                                key={ingredient}
-                                draggableId={name + '-' + ingredient}
-                            />
-                        ))}
-                        {/* {provided.placeholder} */}
+                    <div
+                        ref={provided.innerRef}
+                        className="flex flex-col h-full  items-center overflow-y-auto "
+                        {...provided.droppableProps}>
+                        <div className="w-full ">
+                            {ingredients?.map((ingredient, index) => (
+                                <DraggableIngredient
+                                    ingredient={ingredient}
+                                    index={index}
+                                    key={index}
+                                    draggableId={name + '-' + ingredient.idIngredient}
+                                />
+                            ))}
+                        </div>
                     </div>
                 )}
             </Droppable>

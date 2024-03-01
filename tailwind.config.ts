@@ -8,6 +8,10 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            colors: {
+                'flame-pea-200': '#f3d3b5',
+                'slate-50': '#f8fafc'
+            },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                 'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'

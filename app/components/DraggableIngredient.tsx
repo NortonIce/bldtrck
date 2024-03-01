@@ -1,9 +1,10 @@
 'use client'
 import { Draggable } from '@hello-pangea/dnd'
+import { Ingredient } from '../types/Ingredient'
 
 interface DraggableIngredientProps {
     draggableId: string
-    ingredient: string
+    ingredient: Ingredient
     index: number
 }
 
@@ -19,7 +20,11 @@ export default function DraggableIngredient({
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}>
-                    <div className="h-10 w-1/2 bg-orange-400 shadow-md m-4">{ingredient}</div>
+                    <div>
+                        <div className="flex flex-col items-center bg-orange-200 m-4 p-4 rounded-lg shadow-lg">
+                            {ingredient.strIngredient}
+                        </div>
+                    </div>
                 </div>
             )}
         </Draggable>

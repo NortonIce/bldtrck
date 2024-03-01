@@ -1,4 +1,5 @@
 'use client'
+import { useEffect, useState } from 'react'
 import IngredientsList from './components/IngredientsList'
 import {
     DragDropContext,
@@ -7,38 +8,33 @@ import {
     DroppableProvided,
     DraggableProvided
 } from '@hello-pangea/dnd'
-
-async function getData() {
-    const res = await fetch('www.themealdb.com/api/json/v1/1/list.php?i=list')
-    // The return value is *not* serialized
-    // You can return Date, Map, Set, etc.
-
-    if (!res.ok) {
-        // This will activate the closest `error.js` Error Boundary
-        throw new Error('Failed to fetch data')
-    }
-
-    return res.json()
-}
+import { Ingredient } from './types/Ingredient'
 
 export default function Home() {
+    const [ingredients, setIngredients] = useState<Ingredient[]>([])
+
+    useEffect(() => {
+        fetch('/api/ingredients')
+            .then((res) => res.json())
+            .then((data) => {
+                setIngredients(data?.meals?.slice(0, 11) || [])
+            })
+    }, [])
+
     const onDragEnd = () => {}
 
     return (
-        <main className="">
+        <main className="bg-white">
             <div className="h-screen flex flex-col">
                 <div>Your meal here</div>
-                {/* Large region on the top */}
-                <div className="flex-grow bg-blue-500">Large Region</div>
-
-                {/* Smaller regions on the lower half */}
+                <div className="flex-grow">Large Region</div>
                 <div className="flex h-2/3">
                     <DragDropContext onDragEnd={onDragEnd}>
-                        <div className="flex-grow bg-red-500">
-                            <IngredientsList name="left" />
+                        <div className="flex-grow w-1/2">
+                            <IngredientsList name="left" ingredients={ingredients} />
                         </div>
-                        <div className="flex-grow bg-green-500">
-                            <IngredientsList name="right" />
+                        <div className="flex-grow w-1/2">
+                            <IngredientsList name="right" ingredients={ingredients} />
                         </div>
                     </DragDropContext>
                 </div>

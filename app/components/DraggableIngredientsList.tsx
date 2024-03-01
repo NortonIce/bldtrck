@@ -7,11 +7,12 @@ import {
     DraggableProvided
 } from '@hello-pangea/dnd'
 import DraggableIngredient from './DraggableIngredient'
+import { Ingredient } from '../types/Ingredient'
 
 interface DraggableIngredientProps {
     droppebleId: string
     draggableId: string
-    ingredients: string[]
+    ingredients: Ingredient[]
     index: number
 }
 
@@ -28,7 +29,7 @@ export default function DraggableIngredientList({
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}>
-                    <div className="h-10 w-1/2 bg-orange-400 shadow-md m-4">
+                    <div className="h-10 w-1/2 bg-slate-50 shadow-md m-4">
                         <Droppable droppableId={droppebleId}>
                             {(provided: DroppableProvided) => (
                                 <div ref={provided.innerRef} {...provided.droppableProps}>
@@ -36,11 +37,10 @@ export default function DraggableIngredientList({
                                         <DraggableIngredient
                                             ingredient={ingredient}
                                             index={index}
-                                            key={ingredient}
-                                            draggableId={name + '-' + ingredient}
+                                            key={ingredient.idIngredient}
+                                            draggableId={droppebleId + '-' + ingredient}
                                         />
                                     ))}
-                                    {/* {provided.placeholder} */}
                                 </div>
                             )}
                         </Droppable>
