@@ -1,10 +1,10 @@
 'use client'
 import { Draggable } from '@hello-pangea/dnd'
-import { Ingredient } from '../types/Ingredient'
+import { Problem } from '../types/Problem'
 
 interface DraggableIngredientProps {
     draggableId: string
-    ingredient: Ingredient
+    ingredient: Problem
     index: number
 }
 
