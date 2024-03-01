@@ -1,5 +1,5 @@
 export type Problem = {
-    uid: string
+    id: string
     vLevel: number
     type: string
     image: string

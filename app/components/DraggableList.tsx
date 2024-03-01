@@ -6,7 +6,7 @@ import {
     DroppableProvided,
     DraggableProvided
 } from '@hello-pangea/dnd'
-import DraggableIngredient from './DraggableIngredient'
+import DraggableProblem from './DraggableProblem'
 import { Problem } from '../types/Problem'
 
 interface DraggableIngredientProps {
@@ -38,10 +38,10 @@ export default function DraggableIngredientList({
                                     className="flex flex-col h-full"
                                     {...provided.droppableProps}>
                                     {problems.map((ingredient, index) => (
-                                        <DraggableIngredient
-                                            ingredient={ingredient}
+                                        <DraggableProblem
+                                            problem={ingredient}
                                             index={index}
-                                            key={ingredient.uid}
+                                            key={ingredient.id}
                                             draggableId={droppebleId + '-' + ingredient}
                                         />
                                     ))}

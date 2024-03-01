@@ -4,7 +4,7 @@ export async function GET() {
     try {
         const data: Problem[] = [
             {
-                'uid': '1',
+                'id': '1',
                 'vLevel': 1,
                 'type': 'Type A',
                 'image': 'image1.jpg',
@@ -12,7 +12,7 @@ export async function GET() {
                 'gym': 'Gym 1'
             },
             {
-                'uid': '2',
+                'id': '2',
                 'vLevel': 2,
                 'type': 'Type B',
                 'image': 'image2.jpg',
@@ -20,7 +20,7 @@ export async function GET() {
                 'gym': 'Gym 2'
             },
             {
-                'uid': '3',
+                'id': '3',
                 'vLevel': 3,
                 'type': 'Type C',
                 'image': 'image3.jpg',
@@ -28,7 +28,7 @@ export async function GET() {
                 'gym': 'Gym 3'
             },
             {
-                'uid': '4',
+                'id': '4',
                 'vLevel': 4,
                 'type': 'Type D',
                 'image': 'image4.jpg',
@@ -36,7 +36,7 @@ export async function GET() {
                 'gym': 'Gym 4'
             },
             {
-                'uid': '5',
+                'id': '5',
                 'vLevel': 5,
                 'type': 'Type E',
                 'image': 'image5.jpg',
@@ -44,7 +44,7 @@ export async function GET() {
                 'gym': 'Gym 5'
             },
             {
-                'uid': '6',
+                'id': '6',
                 'vLevel': 6,
                 'type': 'Type F',
                 'image': 'image6.jpg',
@@ -52,7 +52,7 @@ export async function GET() {
                 'gym': 'Gym 6'
             },
             {
-                'uid': '7',
+                'id': '7',
                 'vLevel': 7,
                 'type': 'Type G',
                 'image': 'image7.jpg',
@@ -60,7 +60,7 @@ export async function GET() {
                 'gym': 'Gym 7'
             },
             {
-                'uid': '8',
+                'id': '8',
                 'vLevel': 8,
                 'type': 'Type H',
                 'image': 'image8.jpg',
@@ -68,7 +68,7 @@ export async function GET() {
                 'gym': 'Gym 8'
             },
             {
-                'uid': '9',
+                'id': '9',
                 'vLevel': 9,
                 'type': 'Type I',
                 'image': 'image9.jpg',
@@ -76,7 +76,7 @@ export async function GET() {
                 'gym': 'Gym 9'
             },
             {
-                'uid': '10',
+                'id': '10',
                 'vLevel': 10,
                 'type': 'Type J',
                 'image': 'image10.jpg',
@@ -84,7 +84,7 @@ export async function GET() {
                 'gym': 'Gym 10'
             },
             {
-                'uid': '11',
+                'id': '11',
                 'vLevel': 11,
                 'type': 'Type K',
                 'image': 'image11.jpg',
@@ -92,7 +92,7 @@ export async function GET() {
                 'gym': 'Gym 11'
             },
             {
-                'uid': '12',
+                'id': '12',
                 'vLevel': 12,
                 'type': 'Type L',
                 'image': 'image12.jpg',
@@ -100,7 +100,7 @@ export async function GET() {
                 'gym': 'Gym 12'
             },
             {
-                'uid': '13',
+                'id': '13',
                 'vLevel': 13,
                 'type': 'Type M',
                 'image': 'image13.jpg',
@@ -108,7 +108,7 @@ export async function GET() {
                 'gym': 'Gym 13'
             },
             {
-                'uid': '14',
+                'id': '14',
                 'vLevel': 14,
                 'type': 'Type N',
                 'image': 'image14.jpg',
@@ -116,7 +116,7 @@ export async function GET() {
                 'gym': 'Gym 14'
             },
             {
-                'uid': '15',
+                'id': '15',
                 'vLevel': 15,
                 'type': 'Type O',
                 'image': 'image15.jpg',

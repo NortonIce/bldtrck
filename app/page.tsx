@@ -9,9 +9,12 @@ import {
     DraggableProvided
 } from '@hello-pangea/dnd'
 import { Problem } from './types/Problem'
+import { Completion } from './types/Completion'
 
 export default function Home() {
-    const [ingredients, setIngredients] = useState<Problem[]>([])
+    const [problems, setIngredients] = useState<Problem[]>([])
+
+    const [completions, setCompletions] = useState<Completion[]>([])
 
     useEffect(() => {
         fetch('/api/problems')
@@ -31,10 +34,10 @@ export default function Home() {
                 <div className="flex h-2/3">
                     <DragDropContext onDragEnd={onDragEnd}>
                         <div className="flex-grow p-5 w-1/2">
-                            <ProblemsList name="left" problems={ingredients} />
+                            <ProblemsList name="left" problems={problems} />
                         </div>
                         <div className="flex-grow p-5 w-1/2">
-                            <ProblemsList name="right" problems={ingredients} />
+                            <ProblemsList name="right" problems={problems} />
                         </div>
                     </DragDropContext>
                 </div>
