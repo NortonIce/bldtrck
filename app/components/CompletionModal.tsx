@@ -11,7 +11,17 @@ interface CompletionModalProps {
 }
 
 export default function CompletionModal({ user, problem, onClose, onSave }: CompletionModalProps) {
-    const completeProblem = () => {}
+    const completeProblem = () => {
+        if (!problem || !user) return
+        const completion: Completion = {
+            id: `${problem.id}-${user.id}`,
+            problemId: problem.id,
+            climberId: user.id,
+            completionDate: new Date().toISOString()
+        }
+        onSave(completion)
+        onClose()
+    }
 
     return (
         <Modal show={!!problem && !!user} onHide={onClose}>

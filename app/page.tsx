@@ -39,7 +39,9 @@ export default function Home() {
         setCompletedProblem(problems[value.source.index])
     }
 
-    const completeProblem = (completion: Completion) => {}
+    const completeProblem = (completion: Completion) => {
+        setCompletions([...completions, completion])
+    }
 
     return (
         <main className="bg-white">
