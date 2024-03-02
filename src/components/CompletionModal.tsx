@@ -1,7 +1,7 @@
 import { Button, Modal } from 'react-bootstrap'
-import { Completion } from '../types/Completion'
-import { Problem } from '../types/Problem'
-import { User } from '../types/User'
+import { Completion } from 'types/Completion'
+import { Problem } from 'types/Problem'
+import { User } from 'types/User'
 
 interface CompletionModalProps {
     user: User | null

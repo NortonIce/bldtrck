@@ -1,23 +1,14 @@
 'use client'
-import {
-    DragDropContext,
-    Droppable,
-    Draggable,
-    DroppableProvided,
-    DraggableProvided
-} from '@hello-pangea/dnd'
+import { Droppable, DroppableProvided } from '@hello-pangea/dnd'
 import DraggableProblem from './DraggableProblem'
-import DraggableIngredientList from './DraggableList'
-import { useEffect, useState } from 'react'
-import { Completion } from '../types/Completion'
-import DraggableCompletion from './DraggableCompletion'
+import { Problem } from 'types/Problem'
 
-interface CompletionsListProps {
+interface ProblemsListProps {
     name: string
-    completions: Completion[]
+    problems: Problem[]
 }
 
-export default function CompletionsList({ name, completions }: CompletionsListProps) {
+export default function ProblemsList({ name, problems }: ProblemsListProps) {
     return (
         <div className="h-full w-full bg-white shadow-lg rounded-lg p-6">
             <Droppable droppableId={name}>
@@ -27,12 +18,12 @@ export default function CompletionsList({ name, completions }: CompletionsListPr
                         className="flex flex-col h-full items-center overflow-y-auto "
                         {...provided.droppableProps}>
                         <div className="w-full ">
-                            {completions?.map((completion, index) => (
-                                <DraggableCompletion
-                                    completion={completion}
+                            {problems?.map((problem, index) => (
+                                <DraggableProblem
+                                    problem={problem}
                                     index={index}
                                     key={index}
-                                    draggableId={name + '-' + completion.id}
+                                    draggableId={name + '-' + problem.id}
                                 />
                             ))}
                         </div>

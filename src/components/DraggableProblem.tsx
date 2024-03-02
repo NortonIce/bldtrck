@@ -1,6 +1,6 @@
 'use client'
 import { Draggable } from '@hello-pangea/dnd'
-import { Problem } from '../types/Problem'
+import { Problem } from 'types/Problem'
 
 interface DraggableProblemsProps {
     draggableId: string

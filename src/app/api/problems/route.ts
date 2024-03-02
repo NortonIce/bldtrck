@@ -1,4 +1,4 @@
-import { Problem } from '@/app/types/Problem'
+import { Problem } from '@/src/types/Problem'
 
 export async function GET() {
     try {

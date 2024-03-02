@@ -1,19 +1,12 @@
 'use client'
 import { useEffect, useState } from 'react'
-import ProblemsList from './components/ProblemsList'
-import {
-    DragDropContext,
-    Droppable,
-    Draggable,
-    DroppableProvided,
-    DraggableProvided,
-    OnDragEndResponder
-} from '@hello-pangea/dnd'
-import { Problem } from './types/Problem'
-import { Completion } from './types/Completion'
-import CompletionsList from './components/CompletionsList'
-import CompletionModal from './components/CompletionModal'
-import { User } from './types/User'
+import ProblemsList from 'components/ProblemsList'
+import { DragDropContext, OnDragEndResponder } from '@hello-pangea/dnd'
+import { Problem } from 'types/Problem'
+import { Completion } from 'types/Completion'
+import CompletionsList from 'components/CompletionsList'
+import CompletionModal from 'components/CompletionModal'
+import { User } from 'types/User'
 
 export default function Home() {
     const [problems, setIngredients] = useState<Problem[]>([])
@@ -44,8 +37,8 @@ export default function Home() {
     }
 
     return (
-        <main className="bg-white">
-            <div className="h-screen flex flex-col">
+        <main className="bg-[url('/BoulderBGmin.jpg')] bg-contain h-screen">
+            <div className="h-full flex flex-col">
                 <div className="flex-grow">
                     <CompletionModal
                         user={user}
@@ -56,7 +49,7 @@ export default function Home() {
                 </div>
                 <div className="flex h-3/4">
                     <DragDropContext onDragEnd={onDragEnd}>
-                        <div className="flex-grow p-5 w-1/2">
+                        <div className="flex-grow m-5 w-1/2 bg-white shadow-sm focus:shadow-outline border rounded-lg">
                             <div className="py-2 px-4 text-lg font-bold">Completed boulders</div>
                             <input
                                 type="text"
@@ -65,7 +58,7 @@ export default function Home() {
                             />
                             <CompletionsList name="left" completions={completions} />
                         </div>
-                        <div className="flex-grow p-5 w-1/2">
+                        <div className="flex-grow m-5 w-1/2 bg-white">
                             <div className="py-2 px-4 text-lg font-bold">Tracked problems</div>
                             <input
                                 type="text"

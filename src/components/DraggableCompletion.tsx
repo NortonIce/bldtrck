@@ -1,6 +1,6 @@
 'use client'
 import { Draggable } from '@hello-pangea/dnd'
-import { Completion } from '../types/Completion'
+import { Completion } from 'types/Completion'
 interface DraggableCompletionProps {
     draggableId: string
     completion: Completion
@@ -21,7 +21,8 @@ export default function DraggableCompletion({
                     {...provided.dragHandleProps}>
                     <div>
                         <div className="flex flex-col items-center bg-orange-200 m-4 p-4 rounded-lg shadow-sm">
-                            {completion.id}
+                            {completion.id}{' '}
+                            {new Date(completion.completionDate).toLocaleDateString()}
                         </div>
                     </div>
                 </div>

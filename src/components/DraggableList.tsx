@@ -7,7 +7,7 @@ import {
     DraggableProvided
 } from '@hello-pangea/dnd'
 import DraggableProblem from './DraggableProblem'
-import { Problem } from '../types/Problem'
+import { Problem } from 'types/Problem'
 
 interface DraggableIngredientProps {
     droppebleId: string
