@@ -37,7 +37,7 @@ export default function Home() {
     }
 
     return (
-        <main className="bg-[url('/BoulderBGmin.jpg')] bg-contain h-screen">
+        <main className="bg-[url('../../public/BoulderBGmin.jpg')] bg-contain h-screen">
             <div className="h-full flex flex-col">
                 <div className="flex-grow">
                     <CompletionModal
