@@ -2,7 +2,7 @@ import { Problem } from 'types/Problem'
 
 export async function GET() {
     try {
-        // generated with chatgpt because I don't have time to set up a propper database
+        // should replace it with proper database
         const data: Problem[] = [
             {
                 'id': '1',

@@ -14,9 +14,6 @@ const config: Config = {
             colors: {
                 'flame-pea-200': '#f3d3b5',
                 'slate-50': '#f8fafc'
-            },
-            backgroundImage: {
-                'wallpaper': 'url("/public/BoulderBGmin.jpg")'
             }
         }
     },
