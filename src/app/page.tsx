@@ -37,7 +37,7 @@ export default function Home() {
     }
 
     return (
-        <main className="bg-[url('../../public/BoulderBGmin.jpg')] bg-contain h-screen">
+        <main className="bg-contain h-screen">
             <div className="h-full flex flex-col">
                 <div className="flex-grow">
                     <CompletionModal
@@ -49,15 +49,6 @@ export default function Home() {
                 </div>
                 <div className="flex h-3/4">
                     <DragDropContext onDragEnd={onDragEnd}>
-                        <div className="flex-grow m-5 w-1/2 bg-white shadow-sm focus:shadow-outline border rounded-lg">
-                            <div className="py-2 px-4 text-lg font-bold">Completed boulders</div>
-                            <input
-                                type="text"
-                                placeholder="Filter"
-                                className="w-full p-2 shadow-sm focus:shadow-outline border rounded-lg px-4"
-                            />
-                            <CompletionsList name="left" completions={completions} />
-                        </div>
                         <div className="flex-grow m-5 w-1/2 bg-white">
                             <div className="py-2 px-4 text-lg font-bold">Tracked problems</div>
                             <input
