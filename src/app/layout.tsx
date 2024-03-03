@@ -21,8 +21,13 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <Header />
-                <div className=" bg-contain h-screen">{children}</div>
+                <div className="scroll min-h-screen bg-contain h-screen">
+                    <div
+                        className="fixed inset-0 bg-gradient-to-b from-white to-[#73d9c9] z-[-1]"
+                        aria-hidden="true"></div>
+                    <Header />
+                    {children}
+                </div>
             </body>
         </html>
     )

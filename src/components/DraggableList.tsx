@@ -29,13 +29,13 @@ export default function DraggableIngredientList({
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}>
-                    <div className="bg-slate-50 min-h-64 shadow-md m-4">
+                    <div className="min-h-64 shadow-md m-4">
                         <h1>Meal name</h1>
                         <Droppable droppableId={droppebleId}>
                             {(provided: DroppableProvided) => (
                                 <div
                                     ref={provided.innerRef}
-                                    className="flex flex-col h-full"
+                                    className=" flex flex-col h-full"
                                     {...provided.droppableProps}>
                                     {problems.map((ingredient, index) => (
                                         <DraggableProblem

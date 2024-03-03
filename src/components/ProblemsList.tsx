@@ -10,14 +10,14 @@ interface ProblemsListProps {
 
 export default function ProblemsList({ name, problems }: ProblemsListProps) {
     return (
-        <div className="h-full w-full bg-white shadow-lg rounded-lg p-6">
+        <div className="h-full shadow-lg rounded-lg p-6">
             <Droppable droppableId={name}>
                 {(provided: DroppableProvided) => (
                     <div
                         ref={provided.innerRef}
-                        className="flex flex-col h-full items-center overflow-y-auto "
+                        className="flex flex-col items-center overflow-y-auto "
                         {...provided.droppableProps}>
-                        <div className="w-full ">
+                        <div className=" ">
                             {problems?.map((problem, index) => (
                                 <DraggableProblem
                                     problem={problem}

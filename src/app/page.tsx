@@ -37,19 +37,17 @@ export default function Home() {
     }
 
     return (
-        <main className="bg-contain h-screen">
-            <div className="h-full flex flex-col">
-                <div className="flex-grow">
-                    <CompletionModal
-                        user={user}
-                        problem={completedProblem}
-                        onClose={() => setCompletedProblem(null)}
-                        onSave={completeProblem}
-                    />
-                </div>
-                <div className="flex h-3/4">
+        <main className="">
+            <div className="flex w-full items-center flex-col">
+                <CompletionModal
+                    user={user}
+                    problem={completedProblem}
+                    onClose={() => setCompletedProblem(null)}
+                    onSave={completeProblem}
+                />
+                <div className="flex h-3/4 w-full md:w-1/2 items-center">
                     <DragDropContext onDragEnd={onDragEnd}>
-                        <div className="flex-grow m-5 w-1/2 bg-white">
+                        <div className="flex-grow m-5 bg-white rounded-lg">
                             <div className="py-2 px-4 text-lg font-bold">Tracked problems</div>
                             <input
                                 type="text"
