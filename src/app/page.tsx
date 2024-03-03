@@ -47,7 +47,7 @@ export default function Home() {
                 />
                 <div className="flex h-3/4 w-full md:w-1/2 items-center">
                     <DragDropContext onDragEnd={onDragEnd}>
-                        <div className="flex-grow m-5 bg-white rounded-lg">
+                        <div className="flex-grow m-2 md:m-5 bg-white rounded-lg">
                             <div className="py-2 px-4 text-lg font-bold">Tracked problems</div>
                             <input
                                 type="text"
